@@ -1,0 +1,28 @@
+#path{
+    height: min-content;
+    width: 100%;
+    border: black solid;
+    border-radius: 10px;
+    background-color: black;
+    display: flex;
+}
+
+#tutoriales{
+    display: none;
+}
+.header-text{
+    font-size: medium;
+    color: white;
+    margin: 20px 20px 20px 20px;
+    padding: 10px 10px 10px 10px;
+    white-space: nowrap;
+    max-width: min-content;
+    cursor: default;
+}
+.header-text:hover{
+    color: rgb(46, 150, 247);
+    margin: 18px 18px 18px 18px;
+    border-radius: 2px;
+    border: rgb(20, 13, 217) solid 2px;
+
+}
