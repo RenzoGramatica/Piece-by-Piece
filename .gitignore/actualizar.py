@@ -5,7 +5,15 @@ from datetime import datetime
 ruta_repo = r"C:\Nueva carpeta (4)\Nueva carpeta (3)\Páginas web\3"
 
 def ejecutar(comando):
-    subprocess.run(comando, cwd=ruta_repo, shell=True)
+    resultado = subprocess.run(
+        comando,
+        cwd=ruta_repo,
+        shell=True,
+        capture_output=True,
+        text=True
+    )
+    print(resultado.stdout)
+    print(resultado.stderr)
 
 # mensaje automático con fecha
 mensaje = f"Actualización automática {datetime.now()}"
