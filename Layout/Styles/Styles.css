@@ -9,7 +9,6 @@ body{
     border-radius: 10px;
     background-color: black;
     display: flex;
-    margin: 0px 0px 0px 0px;
 }
 
 #tutoriales{
@@ -18,15 +17,16 @@ body{
 .header-text{
     font-size: medium;
     color: white;
-    margin: 20px 20px 20px 20px;
+    margin: 15px 15px 15px 15px;
     padding: 10px 10px 10px 10px;
     white-space: nowrap;
     max-width: min-content;
     cursor: default;
 }
 .header-text:hover{
-    color: rgb(46, 150, 247);
-    margin: 18px 18px 18px 18px;
-    border-radius: 2px;
-    border: rgb(20, 13, 217) solid 2px;
+    color: rgb(0, 0, 0);
+    margin: 13px 13px 13px 13px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 7px;
+    border: rgb(255, 255, 255) solid 2px;
 }
