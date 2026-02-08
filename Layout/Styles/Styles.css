@@ -1,3 +1,7 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 #path{
     height: min-content;
     width: 100%;
@@ -5,6 +9,7 @@
     border-radius: 10px;
     background-color: black;
     display: flex;
+    margin: 0px 0px 0px 0px;
 }
 
 #tutoriales{
@@ -24,5 +29,4 @@
     margin: 18px 18px 18px 18px;
     border-radius: 2px;
     border: rgb(20, 13, 217) solid 2px;
-
 }
