@@ -17,21 +17,42 @@
       </h3>
       <h3 class="header-text" onclick="model()" id="1_5">Modelo 3D del cubo</h3>
     </div>
-    <h2>Récords:</h2>
-    <table border="1" id="2">
-      <tr>
-        <th>Tiempo</th>
-        <th>Fecha</th>
-        <th>Algoritmo mezclador</th>
-        <th style="color: red" onclick="borrr()">BORRAR TODO</th>
-      </tr>
-      <div id="table"></div>
-    </table>
+    <div>
+      <h2>Mejor</h2>
+      <h2 id="record ">Todavía no hay record</h2>
+    </div>
+    <div>
+      <table border="1" id="2">
+        <tr>
+          <th>Tiempo</th>
+          <th>Algoritmo mezclador</th>
+        </tr>
+        <td>
+          <th id="time"></th>
+          <th id="algoritm"></th>
+        </td>
+      </table>
+      <h2 style="color: red" onclick="borrr()">Reiniciar</h2>
+      <h2 id="mostrador">Manten presionado espacio para empezar o haz click</h2>
+    </div>
+    <div>
+      <h2>Récords:</h2>
+      <table border="1" id="2">
+        <tr>
+          <th>Tiempo</th>
+          <th>Fecha</th>
+          <th>Algoritmo mezclador</th>
+          <th>Algoritmos para resolución (opcional)</th>
+          <th style="color: red" onclick="borrr()">BORRAR TODO</th>
+        </tr>
+        <div id="table2"></div>
+      </table>
+    </div>
     <h2>Mejor</h2>
-    <h2 id="record "></h2>
+    <h2 id="record ">Todavía no hay record</h2>
 
     <script src="../Scripts/JS/Clock.js"></script>
-    <script src="../Scripts/JS/Zn2.js"></script>
+    <script src="../Scripts/JS/Zn3.js"></script>
     <script src="../Scripts/JS/ScriptG.js"></script>
   </body>
 </html>
