@@ -1,0 +1,21 @@
+#mostrador{
+    background-color: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
+    font-size: small;
+    text-align: center;
+    border-radius: 7px;
+    width: max-content;
+    padding: 10px;
+}
+#mejor{
+    text-align: center;
+}
+#a{
+    display: flex;
+}
+#cronostasis{
+    margin: 20px 20px 20px 20px;
+}
+#mejor{
+    margin: 20px 20px 20px 20px;
+}

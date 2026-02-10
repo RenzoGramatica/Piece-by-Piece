@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Piece by piece</title>
     <link rel="stylesheet" href="Styles/Styles.css" />
+    <link rel="stylesheet" href="Styles/Zn3.css" />
   </head>
-  <body>
+  <body onload="borrr()">
     <div id="path">
       <div id="tutoriales"></div>
       <h3 class="header-text" onclick="home()" id="1_1">Home</h3>
@@ -17,25 +18,33 @@
       </h3>
       <h3 class="header-text" onclick="model()" id="1_5">Modelo 3D del cubo</h3>
     </div>
-    <div>
-      <h2>Mejor</h2>
-      <h2 id="record ">Todavía no hay record</h2>
+    <div id="a">
+      <div id="mejor">
+        <h2>Mejor:</h2>
+        <h3 id="record ">Todavía no hay record</h3>
+      </div>
+      <div id="cronostasis">
+        <table
+          border="1"
+          id="2"
+          style="width: 300px; height: 70px; max-width: 300px; max-height: 70px"
+        >
+          <tr>
+            <th>Tiempo</th>
+            <th>Algoritmo mezclador</th>
+          </tr>
+          <tr>
+            <th id="time"></th>
+            <th id="algoritm"></th>
+          </tr>
+        </table>
+        <h2 style="color: red" onclick="borrr()">Reiniciar</h2>
+        <h2 id="mostrador">
+          Manten presionado espacio para empezar o haz click
+        </h2>
+      </div>
     </div>
-    <div>
-      <table border="1" id="2">
-        <tr>
-          <th>Tiempo</th>
-          <th>Algoritmo mezclador</th>
-        </tr>
-        <td>
-          <th id="time"></th>
-          <th id="algoritm"></th>
-        </td>
-      </table>
-      <h2 style="color: red" onclick="borrr()">Reiniciar</h2>
-      <h2 id="mostrador">Manten presionado espacio para empezar o haz click</h2>
-    </div>
-    <div>
+    <div id="tabla">
       <h2>Récords:</h2>
       <table border="1" id="2">
         <tr>
@@ -48,8 +57,6 @@
         <div id="table2"></div>
       </table>
     </div>
-    <h2>Mejor</h2>
-    <h2 id="record ">Todavía no hay record</h2>
 
     <script src="../Scripts/JS/Clock.js"></script>
     <script src="../Scripts/JS/Zn3.js"></script>
