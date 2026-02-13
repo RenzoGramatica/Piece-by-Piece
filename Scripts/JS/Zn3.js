@@ -8,24 +8,24 @@ time.innerText = time.innerText?.trim() ? time.innerText : "0.00";
 var moment = 0;
 var algoritmo = "";
 var moviments = {
-  1: "U ",
+  1: "U  ",
   2: "U' ",
-  3: "2U ",
+  3: "U2 ",
   4: "D ",
   5: "D' ",
-  6: "2D ",
+  6: "D2 ",
   7: "R ",
   8: "R' ",
-  9: "2R ",
-  10: "L ",
-  11: "L' ",
-  12: "2L ",
-  13: "F ",
-  14: "F' ",
-  15: "2F ",
-  16: "B ",
-  17: "B' ",
-  18: "2B ",
+  9: "R2 ",
+  A: "L ",
+  B: "L' ",
+  C: "L2 ",
+  D: "F ",
+  E: "F' ",
+  F: "F2 ",
+  G: "B ",
+  H: "B' ",
+  I: "B2 ",
 };
 
 document.addEventListener("keydown", function (e) {
@@ -35,18 +35,18 @@ document.addEventListener("keydown", function (e) {
       clearInterval(interval);
       i = 0;
       moment = 0;
+      borr();
       mostrador.innerText =
         "Manten presionado espacio para empezar o haz click";
       mostrador.style =
         "background-color: rgba(255, 0, 0, 1);color: rgb(255, 255, 255);";
-      borrr();
     } else {
-      borrr();
       mostrador.innerText = "Espera...";
       mostrador.style =
         "background-color: rgba(255, 251, 0, 1);color: rgba(255, 255, 255, 1);";
       interval = setTimeout(() => {
         i = 1;
+        time.innerText = "0.00";
         mostrador.innerText = "¡Ya!";
         mostrador.style =
           "background-color: rgba(0, 255, 17, 1);color: rgba(255, 255, 255, 1);";
@@ -70,7 +70,6 @@ document.addEventListener("keyup", function (e) {
         "Manten presionado espacio para empezar o haz click";
       mostrador.style =
         "background-color: rgba(255, 0, 0, 1);color: rgb(255, 255, 255);";
-      borrr();
     }
   }
 });
@@ -96,14 +95,78 @@ function transformSecondsForTime(centesimas) {
 
   return `${signo}${base}`;
 }
+function borr() {
+  console.log("se borro");
+  mostrador.innerText = "Manten presionado espacio para empezar o haz click";
+  mostrador.style =
+    "background-color: rgba(255, 0, 0, 1);color: rgb(255, 255, 255);";
+  algoritmo = "";
+  algoritm.innerText = "";
+  var itr = 1;
+  while (algoritmo.length < 21 && itr < 70) {
+    itr++;
+    const random = generarRandom(0, 17);
+    const keys = Object.keys(moviments);
+    const penult = algoritmo[algoritmo.length - 2];
+    var ult = algoritmo[algoritmo.length - 1];
+    if (ult == undefined) {
+      ult = 0;
+    }
+    const indice_ult = keys.indexOf(ult);
+    const inicio_ult = indice_ult - (indice_ult % 3);
+    console.log(indice_ult);
+    console.log(inicio_ult);
+    var fin = inicio_ult + 6;
+    var inicio = inicio_ult;
+    var inicio_ = inicio + 3;
+    var fin_ = inicio + 6;
+    var initi = inicio;
+    var fini = inicio + 3;
+    console.log(inicio_ult % 6);
+    if (inicio_ult % 6 == 3) {
+      inicio = inicio_ult - 3;
+      fin = inicio_ult + 3;
+      inicio_ = inicio_ult - 3;
+      fin_ = inicio_ult;
+    }
+    console.log(inicio);
+    console.log(fin);
+    const grupo = keys.slice(inicio, fin);
+    const grupo_opuesto = keys.slice(inicio_, fin_);
+    const grupo_normal = keys.slice(initi, fini);
+    if (penult == undefined || ult == undefined) {
+      console.log(penult);
+      algoritmo += keys[random];
+    } else {
+      if (grupo.indexOf(keys[random]) == -1) {
+        console.log(grupo);
+        if (
+          grupo_normal.indexOf(penult) == -1 ||
+          grupo_opuesto.indexOf(ult) == -1
+        ) {
+          algoritmo += keys[random];
+        } else {
+          console.log(keys[random]);
+          console.log(grupo);
+        }
+      } else {
+        console.log(keys[random]);
+        console.log(grupo);
+      }
+    }
+  }
+  console.log(algoritmo);
+  for (let ps = 0; ps < algoritmo.length; ps++) {
+    algoritm.innerText += moviments[algoritmo[ps]];
+  }
+}
 function borrr() {
+  console.log("se borro");
   clearInterval(interval);
   clearTimeout(interval);
-  time.innerText = "0.00";
-  while (algoritmo.length < 18) {
-    algoritmo += moviments[generarRandom(1, 18)];
-  }
-  algoritm.innerText = algoritmo;
+  i = 0;
+  moment = 0;
+  borr();
 }
 function generarRandom(inicio, fin) {
   let dif = fin - inicio;
